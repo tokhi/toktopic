@@ -1,4 +1,22 @@
 Toktopic::Application.routes.draw do
+  resources :events
+
+
+  #resources :topics
+  #resources :events
+
+  ##
+
+#  resources :events do
+ # resources :topics do
+  #  collection do 
+   #   get :list_topics
+   # end
+  #end
+ #end
+  #match '/events/:id/topics', :controller => 'events', :action => 'topics'
+
+
   authenticated :user do
     root :to => 'home#index'
   end
