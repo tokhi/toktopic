@@ -23,6 +23,11 @@ before_filter :authenticate_user!, :except => [:index]
     end
   end
 
+ # GET /event/1/edit
+  def edit
+    @event = Event.find(params[:id])
+  end
+
 
   # POST /events
   # POST /events.json
@@ -40,6 +45,24 @@ before_filter :authenticate_user!, :except => [:index]
       end
     #end
   end
+
+# PUT /people/1
+  # PUT /people/1.json
+  def update
+    @event = Event.find(params[:id])
+
+    #respond_to do |format|
+      if @event.update_attributes(params[:event])
+        #format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        #format.json { head :no_content }
+	redirect_to '/events'
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @event.errors, status: :unprocessable_entity }
+      end
+    #end
+  end
+
 
  # DELETE /event/1
   # DELETE /event/1.json

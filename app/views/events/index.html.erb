@@ -18,7 +18,8 @@
     <td><%= event.topic %></td>
     <% if user_signed_in? %> 
     <% if current_user.has_role? :admin %>
-      <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       <td><%= link_to 'Edit', edit_event_path(event) %></td>
+       <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
     <% end %>
 
