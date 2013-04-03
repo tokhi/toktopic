@@ -7,13 +7,16 @@
 <table class="table table-striped table-bordered table-condensed">
 <thead>
 <tr class="success">
+    <th>NO</th>
     <th>Name & ID</th>
     <th>Topic</th>
   </tr>
 </thead>
 <tbody>
+<% counter = 0 %>
 <% @events.each do |event| %>
   <tr >
+    <td><%= counter = counter + 1 %></td>
     <td><%= event.name %></td>
     <td><%= event.topic %></td>
     <% if user_signed_in? %> 
