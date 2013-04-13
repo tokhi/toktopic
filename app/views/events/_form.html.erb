@@ -5,6 +5,11 @@
     
     <%= f.input :name %>
     <%= f.input :topic %>
+    <% if user_signed_in? %> 
+      <% if current_user.has_role? :admin %>
+    	<%= f.cktext_area :protocol, :value => "Default value", :id => "sometext" %>
+      <%end%>
+    <%end%>
   </div>
 
   <div class="form-actions">

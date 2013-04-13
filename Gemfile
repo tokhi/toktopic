@@ -9,7 +9,7 @@ end
 group :production do
  gem 'thin'
 end
-
+gem "ckeditor"
 
 gem 'rake', '10.0.4'
 gem 'heroku'

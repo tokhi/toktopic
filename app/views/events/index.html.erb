@@ -10,6 +10,7 @@
     <th>NO</th>
     <th>Name & ID</th>
     <th>Topic</th>
+    <th>Protocol</th>
     <th>Date Registered</th>
   </tr>
 </thead>
@@ -20,7 +21,8 @@
     <td><%= counter = counter + 1 %></td>
     <td><%= event.name %></td>
     <td><%= event.topic %></td>
-    <td><%= event.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+    <td><%= link_to 'Show', event %></td>
+    <td><%= event.created_at.strftime("%Y-%m-%d %H:%M") %></td>    
     <% if user_signed_in? %> 
     <% if current_user.has_role? :admin %>
        <td><%= link_to 'Edit', edit_event_path(event) %></td>
