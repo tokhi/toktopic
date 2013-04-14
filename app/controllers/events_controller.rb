@@ -3,7 +3,8 @@ before_filter :authenticate_user!, :except => [:index, :show]
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+   # @events = Event.all
+    @events = Event.order("id asc").all
 
     respond_to do |format|
       format.html # index.html.erb
