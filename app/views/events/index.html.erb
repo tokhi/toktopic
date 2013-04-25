@@ -21,7 +21,7 @@
     <td><%= counter = counter + 1 %></td>
     <td><%= event.name %></td>
     <td><%= event.topic %></td>
-    <td><%= link_to 'Show', event %></td>
+    <td><%= link_to protocol_label(event), event %></td>
     <td><%= event.created_at.strftime("%Y-%m-%d %H:%M") %></td>    
     <% if user_signed_in? %> 
     <% if current_user.has_role? :admin %>
