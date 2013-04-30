@@ -7,7 +7,8 @@
     <%= f.input :topic %>
     <% if user_signed_in? %> 
       <% if current_user.has_role? :admin %>
-    	<%= f.cktext_area :protocol, :value => "Default value", :id => "sometext" %>
+    <!--	<%= f.cktext_area :protocol, :value => "Default value", :id => "sometext" %>-->
+    <%= f.cktext_area :protocol, :class => "someclass", :ckeditor => {:language => "us"} %>
       <%end%>
     <%end%>
   </div>
