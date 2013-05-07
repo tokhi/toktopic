@@ -1,27 +1,37 @@
-<h1>Listing semesters</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Department</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <div class="container">
+    <div class="page-header" style="position: relative;">
+      <h1>List of Semesters</h1>
+
+      <div style="position: absolute; top: 0; right: 0;">
+      <div class="btn-group">
+        <%= link_to("<i class=\"icon-plus icon-white\"></i> New Semester".html_safe, 
+                              new_semester_path, :class => "btn btn-primary") %>
+      </div>
+     </div>
+    </div>
+
+    <form class="form-search clear pull-right">
+      <div class="input-append">
+        <input type="text" class="span2 search-query">
+        <button type="button" class="btn" style="border-radius: 0;">
+          <i class="icon-remove"></i>
+        </button>
+        <button type="submit" class="btn">Search</button>
+      </div>
+    </form>
+<div class="span8">
+<table class="table table-striped table-bordered table-condensed">
 
 <% @semesters.each do |semester| %>
   <tr>
-    <td><%= semester.name %></td>
-    <td><%= semester.department %></td>
-    <td><%= semester.description %></td>
-    <td><%= link_to 'Show', semester %></td>
+    <td><%= link_to semester.name, semester %></td>
     <td><%= link_to 'Edit', edit_semester_path(semester) %></td>
     <td><%= link_to 'Destroy', semester, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
-
+</div>
 <br />
-
-<%= link_to 'New Semester', new_semester_path %>
+<%= link_to '+ New Semester'.html_safe, new_semester_path, :class => "label" %>
+</div>

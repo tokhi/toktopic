@@ -1,15 +1,13 @@
 Toktopic::Application.routes.draw do
-  resources :projects
+   
 
 
-  resources :courses
-
-
-  resources :theses
-
-
-  resources :semesters
-
+  resources :semesters do
+    resources :courses do
+      resources :projects
+    end
+    resources :theses
+  end
 
   resources :events
 

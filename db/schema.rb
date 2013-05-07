@@ -11,14 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130430154847) do
+ActiveRecord::Schema.define(:version => 20130507140253) do
 
   create_table "courses", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "type"
+    t.integer  "course_type"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "semester_id"
+    t.string   "department"
   end
 
   create_table "events", :force => true do |t|
@@ -36,6 +38,8 @@ ActiveRecord::Schema.define(:version => 20130430154847) do
     t.text     "protocol"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "course_id"
+    t.integer  "user_id"
   end
 
   create_table "roles", :force => true do |t|
@@ -65,6 +69,8 @@ ActiveRecord::Schema.define(:version => 20130430154847) do
     t.text     "bibliography"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.integer  "semester_id"
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|

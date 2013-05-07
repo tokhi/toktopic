@@ -1,20 +1,83 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @semester.name %>
-</p>
-
-<p>
-  <b>Department:</b>
-  <%= @semester.department %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @semester.description %>
-</p>
 
 
-<%= link_to 'Edit', edit_semester_path(@semester) %> |
-<%= link_to 'Back', semesters_path %>
+
+
+    <div class="container">
+
+      <div id="myCarousel" class="carousel slide">
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            <div class="active item"><img src="http://lorempixel.com/1170/200/nature/"/></div>
+             <div class="item"><img src="http://lorempixel.com/1170/200/technics/"" /></div>
+          </div>
+          <!-- Carousel nav -->
+          <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+        </div>
+      
+      <div class="row">
+        
+        <div class="span8">
+          
+          <div class="post">
+            <div class="row">
+          <div class="feat-img span2">
+              <img src="http://lorempixel.com/350/325/sports/1" title="featured image" alt="an image was here" />
+          </div><!-- end featured image -->
+
+          <div class="details span6">
+            <h2><%= @semester.name %></h2>
+            <p>
+             <%= @semester.description %>
+            </p>
+          </div> <!-- end details -->
+          <a class="btn pull-right" href="#">Read More!</a>
+          </div><!-- end post row -->
+
+        </div><!-- end post -->
+
+        </div><!-- end main area -->
+
+        <aside class="span4">
+          
+          <div class="row">
+            
+
+            <div class="widget span4">
+              <h3>Courses</h3>
+
+              <p>
+               Lorem ipsum incididunt labore proident sit laboris ex ullamco reprehenderit esse consequat deserunt proident Ut proident in velit minim cupidatat in reprehenderit nulla Ut qui dolor dolore sunt dolore aliqua Ut qui.  
+              </p>
+            </div><!-- end widget -->
+
+            <div class="widget span4">
+              <h3>Widget Title</h3>
+
+              <ul>
+                <li><a href="#">Log In</a></li>
+                <li><a href="#">Log Out</a></li>
+                <li><a href="#">Sign Up</a></li>
+                <li><a href="#">Comment</a></li>
+                <li><a href="#">On This</a></li>
+                <li><a href="#">Post</a></li>
+              </ul>
+            </div><!-- end widget -->
+
+            <div class="widget span4">
+              <h3>Widget Title</h3>
+
+              <p>
+               <img src="http://lorempixel.com/550/325/nature/5" title="widget image" alt="an image was here" />
+              </p>
+            </div><!-- end widget -->
+
+
+          </div><!-- end widget row -->
+
+        </aside><!-- end sidebar -->
+
+      </div><!-- end row -->
+ <hr>
+  
+    </div><!-- end container -->
