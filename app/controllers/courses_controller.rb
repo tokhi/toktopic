@@ -28,7 +28,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @course }
+      #format.json { render json: @course }
     end
   end
 
@@ -40,7 +40,8 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def create
-    @course = Course.new(params[:course])
+    #@course = Course.new(params[:course])
+    @course = current_user.courses.create(params[:course])
 
     respond_to do |format|
       if @course.save
