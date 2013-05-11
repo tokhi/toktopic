@@ -1,10 +1,12 @@
-<%= form_for @course do |f| %>
-  <%= f.error_notification %>
+<%= form_for [@semester, @course] do |f| %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :course_type %>
+  	<%= f.label :title %><br />
+  	<%= f.text_field :title %>
+  	<%= f.label :description %><br />
+    <%= f.text_field :description %>
+    <%= f.label :ciyrse_type %><br />
+    <%= f.text_field :course_type %>
   </div>
 
   <div class="form-actions">

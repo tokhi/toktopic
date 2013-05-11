@@ -46,7 +46,7 @@
             <div class="widget span4">
               
               <ul>
-              	<li><%= link_to 'Add a Course', "#{@semester.id}/courses/new" %></li>
+              	<li><%= link_to "Add new course", new_semester_course_path(@semester, :format => :html) %></li>
                 <li><%= link_to 'Register your thesis', "" %></li>
               </ul>
             </div><!-- end widget -->
@@ -54,12 +54,11 @@
             <div class="widget span4">
               <h3>Courses</h3>
               <table class="table table-striped table-bordered table-condensed">
-
-              <tr>
-                <% @semester.courses.each do |course| %>
-                 <td><%= course.title %> </td>
-                <% end %>
+                 <% @semester.courses.each do |course| %>
+              <tr>               
+                 <td><%= link_to course.title, "courses/#{course.id}" %></td>              
               </tr>  
+              <% end %>
               </table>            
             
             </div><!-- end widget -->

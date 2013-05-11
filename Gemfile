@@ -10,7 +10,7 @@ group :production do
  gem 'thin'
 end
 gem "ckeditor"
-
+#gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
 gem 'rake', '10.0.4'
 gem 'heroku'
 group :assets do
