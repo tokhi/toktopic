@@ -44,11 +44,11 @@ class ThesesController < ApplicationController
   def create
     #@thesis = Thesis.new(params[:thesis])
     @semester = Semester.find(params[:semester_id])
-    @thesis = @semester.theses.new(params[:course])
+    @thesis = @semester.theses.new(params[:thesis])
     respond_to do |format|
-      if @course.save
+      if @thesis.save
         format.html { redirect_to semester_theses_path }
-        format.json { render json: @course, status: :created, location:  semester_theses_path }
+        format.json { render json: @thesis, status: :created, location:  semester_theses_path }
       else
         format.html { render action: "new" }
         format.json { render json: @thesis.errors, status: :unprocessable_entity }
@@ -62,7 +62,7 @@ class ThesesController < ApplicationController
     @thesis = Thesis.find(params[:id])
     
     respond_to do |format|
-      if @course.update_attributes(params[:thesis])
+      if @thesis.update_attributes(params[:thesis])
         format.html { redirect_to semester_theses_path }
         format.json { head :no_content }
       else
